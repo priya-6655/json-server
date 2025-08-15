@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom'
 function AddEmployee() {
     const [empData, setEmpData] = useState({ id: "", firstName: "", lastName: "", salary: "", address: "" })
     const navigate = useNavigate()
-
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
 
     const handleChange = (e) => {
         const { id, value } = e.target
@@ -20,10 +20,10 @@ function AddEmployee() {
             ...empData,
             id: parseInt((Math.random() + 1) * 100).toString(),
         }
-        fetch('https://json-server-three-ruby.vercel.app/employee', {
+        fetch(`${baseURL}/employee`, {
             method: "POST",
             headers: {
-                'Content-Type': "apllication/json"
+                'Content-Type': "aplication/json"
             },
             body: JSON.stringify(payload)
         })

@@ -10,6 +10,7 @@ function UpdateEmployee() {
     const [viewempDate, setViewEmpDate] = useState(false)
     const [selectedEmp, setSelectedEmp] = useState(null)
     const firstNameRef = useRef(null)
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
 
     const moveToViewPages = () => {
         navigate('/mainPage')
@@ -24,7 +25,7 @@ function UpdateEmployee() {
     }
 
     useEffect(() => {
-        fetch('https://json-server-three-ruby.vercel.app/employee')
+        fetch(`${baseURL}/employee`)
             .then(res => res.json())
             .then(data => setEmplist(data))
             .catch(err => console.error('Fetching Error', err))
@@ -55,7 +56,7 @@ function UpdateEmployee() {
     const updateEmpData = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.put(`https://json-server-three-ruby.vercel.app/employee/${selectedEmp.id}`, selectedEmp, {
+            const response = await axios.put(`${baseURL}/employee/${selectedEmp.id}`, selectedEmp, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

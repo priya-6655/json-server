@@ -6,9 +6,10 @@ import { useNavigate } from 'react-router-dom'
 function MainPage() {
     const [employeeList, setEmployeeList] = useState([])
     const navigate = useNavigate()
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
 
     useEffect(() => {
-        fetch('https://json-server-three-ruby.vercel.app/employee')
+        fetch(`${baseURL}/employee`)
             .then((res) => res.json())
             .then((data) => setEmployeeList(data))
             .catch((err) => console.error("Fetch error", err))

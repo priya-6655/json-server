@@ -10,6 +10,8 @@ function DeleteEmployee() {
     const [selectedDelEmp, setSelectedDelEmp] = useState(null)
     const [delEmpId, setDelEmpId] = useState('')
 
+    const baseURL = import.meta.env.VITE_API_BASE_URL;
+
     const moveToViewPages = () => {
         navigate('/mainPage')
     }
@@ -23,7 +25,7 @@ function DeleteEmployee() {
     }
 
     useEffect(() => {
-        axios.get('https://json-server-three-ruby.vercel.app/employee')
+        axios.get(`${baseURL}/employee`)
             .then(res => setDelEmpDetails(res.data))
             .catch(err => console.error("Fetching error", err))
     }, [])
@@ -40,7 +42,7 @@ function DeleteEmployee() {
     const deleteEmpData = async (e) => {
         e.preventDefault()
         try {
-            await axios.delete(`https://json-server-three-ruby.vercel.app/employee/${delEmpId}`)
+            await axios.delete(`${baseURL}/employee/${delEmpId}`)
             alert('Employee deleted successfully')
             setSelectedDelEmp(null);
         } catch (error) {
