@@ -32,7 +32,7 @@ function DeleteEmployee() {
 
     const ViewDelEmpDetails = (e) => {
         e.preventDefault()
-        const findDelEmp = delEmpDetails.find(emp => emp.id === delEmpId)
+        const findDelEmp = delEmpDetails.find(emp => emp.objectId === delEmpId)
         if (delEmpId) {
             setSelectedDelEmp(findDelEmp)
             setViewDelEmp(true)
@@ -111,7 +111,7 @@ function DeleteEmployee() {
                             <option value=''>select employee name</option>
 
                             {delEmpDetails.map((item, index) => (
-                                <option key={index} value={item.id}>{item.firstName}</option>
+                                <option key={index} value={item.objectId}>{item.firstName}</option>
                             ))}
                         </select>
 

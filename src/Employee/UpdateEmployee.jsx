@@ -56,7 +56,7 @@ function UpdateEmployee() {
     const updateEmpData = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.put(`${baseURL}/employee/${selectedEmp.id}`, selectedEmp, {
+            const response = await axios.put(`${baseURL}/employee/${selectedEmp.objectId}`, selectedEmp, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
