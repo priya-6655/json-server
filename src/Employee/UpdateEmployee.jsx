@@ -24,7 +24,7 @@ function UpdateEmployee() {
     }
 
     useEffect(() => {
-        fetch('http://localhost:3000/employee')
+        fetch('https://json-server-three-ruby.vercel.app/employee')
             .then(res => res.json())
             .then(data => setEmplist(data))
             .catch(err => console.error('Fetching Error', err))
@@ -55,7 +55,7 @@ function UpdateEmployee() {
     const updateEmpData = async (e) => {
         e.preventDefault()
         try {
-            const response = await axios.put(`http://localhost:3000/employee/${selectedEmp.id}`, selectedEmp, {
+            const response = await axios.put(`https://json-server-three-ruby.vercel.app/employee/${selectedEmp.id}`, selectedEmp, {
                 headers: {
                     'Content-Type': 'application/json'
                 }

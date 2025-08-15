@@ -6,6 +6,13 @@
       "lastName": "Easwaramoorthy",
       "salary": "40000",
       "address": "Erode"
+    },
+    {
+      "id": "195",
+      "firstName": "Shanmuga priya",
+      "lastName": "Pakthavachalam",
+      "salary": "30000",
+      "address": "Oolapalayam"
     }
   ]
 }

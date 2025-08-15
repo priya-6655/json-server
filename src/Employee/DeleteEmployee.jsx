@@ -23,7 +23,7 @@ function DeleteEmployee() {
     }
 
     useEffect(() => {
-        axios.get('http://localhost:3000/employee')
+        axios.get('https://json-server-three-ruby.vercel.app/employee')
             .then(res => setDelEmpDetails(res.data))
             .catch(err => console.error("Fetching error", err))
     }, [])
@@ -40,7 +40,7 @@ function DeleteEmployee() {
     const deleteEmpData = async (e) => {
         e.preventDefault()
         try {
-            await axios.delete(`http://localhost:3000/employee/${delEmpId}`)
+            await axios.delete(`https://json-server-three-ruby.vercel.app/employee/${delEmpId}`)
             alert('Employee deleted successfully')
             setSelectedDelEmp(null);
         } catch (error) {

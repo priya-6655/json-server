@@ -20,7 +20,7 @@ function AddEmployee() {
             ...empData,
             id: parseInt((Math.random() + 1) * 100).toString(),
         }
-        fetch('http://localhost:3000/employee', {
+        fetch('https://json-server-three-ruby.vercel.app/employee', {
             method: "POST",
             headers: {
                 'Content-Type': "apllication/json"

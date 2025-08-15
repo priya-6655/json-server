@@ -8,7 +8,7 @@ function MainPage() {
     const navigate = useNavigate()
 
     useEffect(() => {
-        fetch('http://localhost:3000/employee')
+        fetch('https://json-server-three-ruby.vercel.app/employee')
             .then((res) => res.json())
             .then((data) => setEmployeeList(data))
             .catch((err) => console.error("Fetch error", err))
