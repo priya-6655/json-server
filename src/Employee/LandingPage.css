@@ -1,0 +1,34 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    /* overflow-x: hidden; */
+}
+
+.evote {
+    width: 60px;
+    height: 60px;
+}
+
+.logout {
+    width: 30px;
+    height: 30px;
+    border-radius: 30px;
+    background-color: rgb(247, 146, 6);
+    cursor: pointer;
+}
+
+#mainImg {
+    background: url('https://t3.ftcdn.net/jpg/08/68/51/04/360_F_868510427_vsvN67LV1zSmLMyXMOFG05tRCmTAj1xL.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
+
+#mainPageimg {
+    background: url('https://media.istockphoto.com/id/496402539/photo/glow-light-of-petrochemical-industry-on-sunset.jpg?s=612x612&w=0&k=20&c=IRm_h6-2jaBgg5lDkjkETveMR9pm3FaqCnhQl7LLiv8=');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: 100vh;
+}
